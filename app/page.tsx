@@ -1,20 +1,25 @@
 import { FC } from 'react'
-import Box from '@mui/material/Box'
-import Card from '@mui/material/Card'
-import Container from '@mui/material/Container'
-import Typography from '@mui/material/Typography'
+// import Box from '@mui/material/Box'
+// import Card from '@mui/material/Card'
+// import Container from '@mui/material/Container'
+// import Typography from '@mui/material/Typography'
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Avatar,
+  Button,
+  Paper,
+} from '@mui/material'
+import Image from 'next/image'
+import MainNav from '@/components/navbar/MainNav'
 
 const Home: FC = () => {
   return (
-    <main>
-      <Container>
-        <Box>
-          <Card>
-            <Typography variant="h2">Hello World ~</Typography>
-          </Card>
-        </Box>
-      </Container>
-    </main>
+    <>
+      <MainNav />
+      <Paper elevation={0}>Test</Paper>
+    </>
   )
 }
 

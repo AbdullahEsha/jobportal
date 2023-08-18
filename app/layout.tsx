@@ -1,29 +1,22 @@
-import { Box } from '@mui/material'
+import { Box, ThemeProvider } from '@mui/material'
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Poppins } from 'next/font/google'
+import { ReactNode } from 'react'
+import { Theme } from '@/theme/theme'
 
-const inter = Inter({ subsets: ['latin'] })
+const poppins = Poppins({
+  subsets: ['devanagari', 'latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+})
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Box
-          sx={{
-            backgroundColor: 'primary.light',
-            '&:hover': {
-              backgroundColor: 'primary.main',
-              opacity: [0.9, 0.8, 0.7],
-            },
-          }}
-        >
-          {children}
-        </Box>
+      <body className={poppins.className}>
+        <ThemeProvider theme={Theme}>{children}</ThemeProvider>
       </body>
     </html>
   )
 }
+
+export default RootLayout

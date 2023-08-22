@@ -2,7 +2,7 @@ import { Box, ThemeProvider } from '@mui/material'
 import './globals.css'
 import { Poppins } from 'next/font/google'
 import { ReactNode } from 'react'
-import { Theme } from '@/theme/theme'
+import { theme } from '@/theme/theme'
 
 const poppins = Poppins({
   subsets: ['devanagari', 'latin'],
@@ -13,7 +13,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <ThemeProvider theme={Theme}>{children}</ThemeProvider>
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
       </body>
     </html>
   )

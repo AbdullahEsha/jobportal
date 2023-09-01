@@ -1,4 +1,4 @@
-import { Box, ThemeProvider } from '@mui/material'
+import { ThemeProvider } from '@mui/material'
 import './globals.css'
 import { Poppins } from 'next/font/google'
 import { ReactNode } from 'react'

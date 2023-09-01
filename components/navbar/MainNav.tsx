@@ -1,13 +1,4 @@
-import {
-  Avatar,
-  Box,
-  Card,
-  CardMedia,
-  ImageListItem,
-  Toolbar,
-  Typography,
-} from '@mui/material'
-import Image from 'next/image'
+import { Avatar, Box, Toolbar, Typography } from '@mui/material'
 
 const MainNav = () => {
   return (
@@ -16,30 +7,43 @@ const MainNav = () => {
       sx={{
         backgroundColor: `primary.main`,
       }}
-      display={`flex`}
-      justifyContent={`space-between`}
-      alignItems={`center`}
-      py={`20px`}
-      pr={`20px`}
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+      py="8px"
+      pr="20px"
     >
       <Toolbar sx={{ display: 'flex', gap: '20px' }}>
         <Box
           component="img"
           src="/techForing-white.png"
           alt="techForing-white"
-          sx={{ height: '50px', width: 'auto' }}
+          height="35px"
+          width="auto"
         />
         <Box>
-          <Typography component="h4" fontWeight={700} fontSize={`30px`}>
+          <Typography
+            component="h6"
+            fontWeight={800}
+            fontSize="18px"
+            color="white"
+          >
             TechForing
           </Typography>
-          <Typography component="p">Shaping Tomorrows Cybersecurity</Typography>
+          <Typography
+            component="p"
+            color="white"
+            fontSize="13px"
+            lineHeight="1.5"
+          >
+            Shaping Tomorrows Cybersecurity
+          </Typography>
         </Box>
       </Toolbar>
       <Avatar
         src="/user-image.jpeg"
         alt="user-image"
-        sx={{ height: '50px', width: '50px' }}
+        sx={{ height: '35px', width: '35px' }}
       />
     </Box>
   )

@@ -68,9 +68,15 @@ export const SignUp: FC<TSignUpProps> = ({ handleToggle }) => {
             Password and Confirm Password not matched!
           </Typography>
         )}
-        <Button type="submit" variant="contained" onClick={handleSubmit}>
-          Sign Up
-        </Button>
+        {formData.password === confirmPassword ? (
+          <Button type="submit" variant="contained" onClick={handleSubmit}>
+            Sign Up
+          </Button>
+        ) : (
+          <Button type="submit" variant="contained" disabled>
+            Sign Up
+          </Button>
+        )}
         <Button onClick={handleToggle} variant="outlined">
           Switch to Sign In
         </Button>

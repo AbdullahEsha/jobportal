@@ -1,28 +1,13 @@
 'use client'
-import {
-  Box,
-  Button,
-  FormGroup,
-  Grid,
-  TextField,
-  Typography,
-} from '@mui/material'
 import { useState } from 'react'
+import { Box, Grid } from '@mui/material'
+import { SignIn, SignUp } from '@/components/auth'
 
 const Login = () => {
-  const [formData, setFormData] = useState({
-    userName: '',
-    password: '',
-  })
-  const handlechange = (event: any) => {
-    setFormData({
-      ...formData,
-      [event.target.name]: event.target.value,
-    })
-  }
-  const handleSubmit = (event: any) => {
-    event.preventdefault()
-    console.log('formData', formData)
+  const [isSignIn, setIsSignIn] = useState(true)
+
+  const handleToggle = () => {
+    setIsSignIn(!isSignIn)
   }
 
   return (
@@ -35,31 +20,17 @@ const Login = () => {
         alignItems="center"
       >
         <Grid item xs={12} lg={4}>
-          <Box border="1px solid #ccc" p="50px">
-            <form style={{ display: 'grid', gap: '10px' }}>
-              <Typography component="h2" fontWeight="600" fontSize="22px">
-                Sign in to your account
-              </Typography>
-              <TextField
-                type="text"
-                name="userName"
-                label="User Name"
-                variant="outlined"
-                onChange={handlechange}
-                fullWidth
-              />
-              <TextField
-                type="password"
-                label="Password"
-                name="password"
-                variant="outlined"
-                fullWidth
-                onChange={handlechange}
-              />
-              <Button type="submit" variant="contained" onClick={handleSubmit}>
-                Sign In
-              </Button>
-            </form>
+          <Box
+            border="1px solid #ccc"
+            p="50px"
+            borderRadius="5px"
+            boxShadow="10px 10px 15px 10px #bbbbbb3d;"
+          >
+            {isSignIn ? (
+              <SignIn handleToggle={handleToggle} />
+            ) : (
+              <SignUp handleToggle={handleToggle} />
+            )}
           </Box>
         </Grid>
       </Grid>
